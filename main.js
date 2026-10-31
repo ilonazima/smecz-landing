@@ -111,6 +111,7 @@
   const pains = $$('[data-pains] li');
 
   if (!window.gsap || !window.ScrollTrigger) {
+    $('[data-hero-pro]').classList.add('is-split');
     paintScore(scoreStates.length - 1); paintRank(true);
     steps.forEach((s) => s.classList.add('is-on'));
     pains.forEach((p) => p.classList.add('is-on'));
@@ -118,6 +119,41 @@
   }
 
   gsap.registerPlugin(ScrollTrigger);
+
+  // Hero „Pro?”: port React Bits <SplitText /> (effect „rise” + mask, accentColor, hoverEffect „lift”).
+  // Litery wysuwają się spod krawędzi co 70 ms i po drodze przechodzą przez volt.
+  const heroPro = $('[data-hero-pro]');
+  if (!window.SplitText || !root.classList.contains('motion-ok')) {
+    heroPro.classList.add('is-split');
+  } else {
+    gsap.registerPlugin(SplitText);
+    document.fonts.ready.then(() => {
+      const split = SplitText.create(heroPro, { type: 'chars', mask: 'chars', aria: 'none', charsClass: 'pro__char' });
+      heroPro.classList.add('is-split');
+      const letters = split.chars.filter((c) => !c.closest('.pro__q'));
+      gsap.timeline({ delay: 0.15 })
+        .fromTo(split.chars, { yPercent: 110 }, { yPercent: 0, duration: 1.25, ease: 'power3.out', stagger: 0.07 }, 0)
+        .fromTo(letters, { color: '#FDFD51' }, { color: '#fff', duration: 0.9, ease: 'power1.inOut', stagger: 0.07, clearProps: 'color' }, 0.4)
+        .add(() => liftOnHover(split.masks));
+    });
+  }
+
+  // Kursor unosi litery w swoim pobliżu z miękkim spadkiem (gauss), po zjechaniu wracają na miejsce
+  function liftOnHover(pieces) {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const em = parseFloat(getComputedStyle(heroPro).fontSize);
+    const lift = em * 0.12;
+    const radius = em * 0.6;
+    const movers = pieces.map((el) => gsap.quickTo(el, 'y', { duration: 0.5, ease: 'power3.out' }));
+    heroPro.addEventListener('pointermove', (e) => {
+      pieces.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+        const dx = (r.left + r.width / 2 - e.clientX) / radius;
+        movers[i](-lift * Math.exp(-dx * dx * 0.5));
+      });
+    });
+    heroPro.addEventListener('pointerleave', () => movers.forEach((to) => to(0)));
+  }
   const mm = gsap.matchMedia();
 
   mm.add({
