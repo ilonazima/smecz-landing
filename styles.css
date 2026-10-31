@@ -124,8 +124,10 @@ button { font: inherit; color: inherit; }
 .hero__lead-in { display: block; font-size: clamp(1.4rem, 2.6vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .2em; line-height: 1; }
 .pro { display: inline-block; font-size: clamp(7.5rem, 27vw, 26rem); font-weight: 900; letter-spacing: -.055em; line-height: .8; margin-left: -.04em; }
 .pro__q { color: var(--volt); }
-/* SplitText: litery „Pro?” czekają ukryte, aż skrypt je podzieli (tylko z JS i bez reduced-motion) */
-.motion-ok [data-hero-pro]:not(.is-split) { visibility: hidden; }
+/* SplitText: litery „Twój poziom: Pro?” czekają ukryte, aż skrypt je podzieli (tylko z JS i bez reduced-motion) */
+.motion-ok [data-hero-split]:not(.is-split) { visibility: hidden; }
+/* Maska z zapasem, żeby nie ucinała ogonków (j, p) i kreski nad ó */
+.split-char-mask { padding: .12em 0 .2em; margin: -.12em 0 -.2em; }
 .hero__bottom { display: grid; grid-template-columns: minmax(0, 30em) 1fr; gap: 28px 48px; align-items: end; margin-top: 36px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero__bottom .actions { justify-content: flex-end; }
