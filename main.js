@@ -139,25 +139,28 @@
       gsap.timeline({ delay: 0.15 })
         .fromTo(chars, { yPercent: 135 }, { yPercent: 0, duration: 1.25, ease: 'power3.out', stagger: 0.07 }, 0)
         .fromTo(letters, { color: '#FDFD51' }, { color: '#fff', duration: 0.9, ease: 'power1.inOut', stagger: 0.07, clearProps: 'color' }, 0.4)
-        .add(() => splitTargets.forEach((el, i) => liftOnHover(el, splits[i].masks)));
+        .add(() => liftOnHover($('#hero-title'), splitTargets, splits));
     });
   }
 
-  // Kursor unosi litery w swoim pobliżu z miękkim spadkiem (gauss), po zjechaniu wracają na miejsce
-  function liftOnHover(el, pieces) {
+  // Kursor nad nagłówkiem unosi litery obu linii w swoim pobliżu (gauss w poziomie), po zjechaniu wracają.
+  // Zasięg liczony od „Pro?”, a „Twój poziom:” unosi się mocniej względem swojego rozmiaru, żeby ruch był widać.
+  function liftOnHover(title, lines, splits) {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    const em = parseFloat(getComputedStyle(el).fontSize);
-    const lift = em * 0.12;
-    const radius = em * 0.6;
-    const movers = pieces.map((piece) => gsap.quickTo(piece, 'y', { duration: 0.5, ease: 'power3.out' }));
-    el.addEventListener('pointermove', (e) => {
-      pieces.forEach((piece, i) => {
-        const r = piece.getBoundingClientRect();
+    const size = (el) => parseFloat(getComputedStyle(el).fontSize);
+    const radius = Math.max(...lines.map(size)) * 0.6;
+    const pieces = lines.flatMap((el, i) => {
+      const lift = el.hasAttribute('data-hero-pro') ? size(el) * 0.12 : size(el) * 0.35;
+      return splits[i].masks.map((mask) => ({ mask, lift, to: gsap.quickTo(mask, 'y', { duration: 0.5, ease: 'power3.out' }) }));
+    });
+    title.addEventListener('pointermove', (e) => {
+      pieces.forEach(({ mask, lift, to }) => {
+        const r = mask.getBoundingClientRect();
         const dx = (r.left + r.width / 2 - e.clientX) / radius;
-        movers[i](-lift * Math.exp(-dx * dx * 0.5));
+        to(-lift * Math.exp(-dx * dx * 0.5));
       });
     });
-    el.addEventListener('pointerleave', () => movers.forEach((to) => to(0)));
+    title.addEventListener('pointerleave', () => pieces.forEach(({ to }) => to(0)));
   }
   const mm = gsap.matchMedia();
 
