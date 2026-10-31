@@ -143,6 +143,7 @@ button { font: inherit; color: inherit; }
 .hero__stats { position: absolute; left: 0; right: 0; bottom: 0; grid-template-columns: repeat(3, 1fr); }
 .hero__stats .broadcast__cell { padding-left: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter))); }
 .hero__stats .broadcast__cell + .broadcast__cell { padding-left: 24px; }
+.hero__stats .broadcast__cell { justify-content: space-between; } /* liczby w jednej linii, gdy etykieta zawija się na telefonie */
 
 .match-card { background: #fff; color: var(--ink); border-radius: var(--r-card); padding: 16px 18px 14px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
 .match-card::before { content: ""; position: absolute; left: -10%; right: -10%; top: 58%; height: 140px; border: 1.5px solid var(--line); border-radius: 50%; }
