@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smecz — graj jak zawodowiec</title>
+  <meta name="description" content="Smecz to darmowa aplikacja dla amatorów tenisa, padla, squasha i pickleballa. Rezerwuj kort w kilka tapnięć, zapisuj wyniki, wspinaj się w rankingu.">
+  <meta name="theme-color" content="#F7F7F8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-noc.jpg" media="(min-width: 760px)">
+  <link rel="preload" as="image" href="assets/img/hero-noc-m.jpg" media="(max-width: 759px)">
+  <link rel="stylesheet" href="styles.css">
+  <script>if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion-ok");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+
+  <header class="nav" data-nav>
+    <div class="nav__inner container">
+      <a class="wordmark" href="#top" aria-label="Smecz — na górę strony">Smecz<span class="wordmark__dot">.</span></a>
+      <nav class="nav__links" aria-label="Główna">
+        <a href="#problem">Jak działa</a>
+        <a href="#sezon">Ligi i turnieje</a>
+      </nav>
+      <a class="btn btn--volt btn--sm" href="#pobierz">Pobierz <span class="btn__arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Otwarcie: Pro? -->
+    <div class="hero-track" id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__frame" data-hero-frame>
+          <div class="hero__media" data-hero-photo>
+            <picture>
+              <source media="(max-width: 759px)" srcset="assets/img/hero-noc-m.jpg">
+              <img src="assets/img/hero-noc.jpg" width="1600" height="2400" alt="Tenisistka przy siatce sięga rakietą po wysoką piłkę na oświetlonym nocą korcie">
+            </picture>
+            <div class="hero__shade" aria-hidden="true"></div>
+          </div>
+
+          <div class="hero__content container">
+            <p class="kicker">
+              <span class="tag glass glass--dark tag--tenis">Tenis</span>
+              <span class="tag glass glass--dark tag--padel">Padel</span>
+              <span class="tag glass glass--dark tag--squash">Squash</span>
+              <span class="tag glass glass--dark tag--pickle">Pickleball</span>
+            </p>
+            <h1 id="hero-title" class="hero__title">
+              <span class="hero__lead-in">Twój poziom:</span>
+              <span class="pro" data-hero-pro>Pro<span class="pro__q">?</span></span>
+            </h1>
+            <div class="hero__bottom">
+              <p class="lead lead--light">Smecz to darmowa aplikacja dla amatorów, którzy grają na serio. Kort zarezerwujesz w kilka tapnięć, a każdy mecz trafi do Twojej historii, statystyk i&nbsp;rankingu.</p>
+              <div class="actions">
+                <a class="btn btn--volt" href="#pobierz">Pobierz za darmo <span class="btn__icon" aria-hidden="true">↗</span></a>
+                <a class="btn btn--ghost-light" href="#problem">Zobacz, jak działa</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="broadcast hero__stats" data-hero-stats aria-label="Przykładowe statystyki gracza">
+            <div class="broadcast__cell"><span class="broadcast__label">Ranking</span><span class="broadcast__num">4</span></div>
+            <div class="broadcast__cell"><span class="broadcast__label">Mecze · 2026</span><span class="broadcast__num">17</span></div>
+            <div class="broadcast__cell"><span class="broadcast__label">Wygrane · 68%</span><span class="broadcast__num"><b class="win">16</b><i>/</i><b class="loss">8</b></span></div>
+          </div>
+
+          <figure class="match-card hero__card glass glass--dark" data-hero-card>
+            <div class="match-card__top">
+              <span class="match-card__date">Środa | 28.08 <b>18:30</b></span>
+              <span class="pill pill--outline">Liga</span>
+            </div>
+            <p class="match-card__place">Klub Topspin, Kort 3</p>
+            <div class="match-card__players">
+              <span class="player"><span class="avatar avatar--you">TY</span>Ty</span>
+              <span class="match-card__net" aria-hidden="true"></span>
+              <span class="player"><span class="avatar">MW</span>Michał W.</span>
+            </div>
+            <figcaption class="match-card__label">Najbliższy mecz <span class="sample">przykład</span></figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+
+    <!-- 2–3. Problem → Smecz -->
+    <div class="problem-track" id="problem">
+      <section class="problem" aria-labelledby="problem-title">
+        <div class="problem__inner container">
+          <div class="problem__text" data-reveal-group>
+            <p data-reveal class="eyebrow">Czwartek, 21:47</p>
+            <h2 id="problem-title" data-reveal class="h2">Grasz jak zawodowiec. Organizujesz jak w&nbsp;2009.</h2>
+            <ol class="pains" data-pains>
+              <li><span><b>Rezerwacje robione dla recepcji,</b> nie dla gracza.</span></li>
+              <li><span><b>Tabelki przewijane w bok</b> na małym ekranie i logowanie co tydzień.</span></li>
+              <li><span><b>Partner w jednej grupie,</b> kort w drugiej apce, wynik w pamięci.</span></li>
+              <li><span><b>Lata gry — zero historii.</b> Nie wiesz, czy grasz lepiej niż rok temu.</span></li>
+            </ol>
+          </div>
+
+          <div class="stack" aria-hidden="true">
+            <div class="old old--grid" data-old>
+              <div class="old__bar"><span>Rezerwacje online</span><span class="old__login">Zaloguj ponownie</span></div>
+              <div class="old-grid">
+                <span></span><span>K1</span><span>K2</span><span>K3</span><span>K4</span><span>K5</span><span>K6</span>
+                <span>17:00</span><i class="x"></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i><i class="x"></i>
+                <span>17:30</span><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i></i><i class="x"></i>
+                <span>18:00</span><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+                <span>18:30</span><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+                <span>19:00</span><i class="x"></i><i class="x"></i><i class="x"></i><i></i><i class="x"></i><i class="x"></i>
+              </div>
+              <div class="old__scroll"><span></span></div>
+            </div>
+            <div class="old old--chat" data-old>
+              <p class="bubble">Ktoś gra jutro o 19?</p>
+              <p class="bubble bubble--me">Ja nie mogę 😅</p>
+              <p class="bubble">To może piątek?</p>
+              <p class="bubble">…</p>
+            </div>
+            <div class="old old--note" data-old>
+              <p>wynik z wtorku?</p>
+              <p class="note__score">6:4, 3:6… chyba 10:8</p>
+            </div>
+            <div class="old old--sheet" data-old>
+              <p class="sheet__file">liga_2026_final_v3.xlsx</p>
+              <div class="sheet__rows"><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="smash" data-smash aria-hidden="true">
+          <img src="assets/img/smecz-padel.jpg" width="1600" height="2400" alt="" loading="lazy">
+          <div class="smash__shade"></div>
+        </div>
+        <p class="smash__word" data-smash-word>Smecz<span>.</span></p>
+        <p class="smash__line" data-smash-line>Jeden ruch. Porządek.</p>
+      </section>
+    </div>
+
+    <!-- 4. Kort w kilka tapnięć -->
+    <div class="book-track">
+      <section class="book" aria-labelledby="book-title">
+        <div class="book__inner container">
+          <div class="book__text" data-reveal-group>
+            <p data-reveal class="eyebrow">Rezerwacja</p>
+            <h2 id="book-title" data-reveal class="h2">Kort w&nbsp;kilka tapnięć.</h2>
+            <p data-reveal class="lead">Wybierasz dyscyplinę, miasto i godziny, a Smecz pokazuje wolne korty w klubach wokół Ciebie. Bez logowania do pięciu systemów.</p>
+            <ul class="perks" data-reveal-group>
+              <li data-reveal><span class="perk__k">Na wierzchu</span>Dostępne godziny od razu, bez klikania w tabelę.</li>
+              <li data-reveal><span class="perk__k">Alert</span>Zwolni się Twoja godzina — dostaniesz powiadomienie.</li>
+              <li data-reveal><span class="perk__k">Plan B</span>Ta sama godzina w innym klubie, jeśli Twój jest pełny.</li>
+            </ul>
+          </div>
+
+          <div class="book__stage">
+            <div class="book__photo" data-book-photo>
+              <img src="assets/img/kort-z-gory.jpg" width="1800" height="1200" alt="Kort ziemny z lotu ptaka, tenisista serwuje w popołudniowym słońcu" loading="lazy">
+            </div>
+
+            <figure class="phone" data-phone>
+              <figcaption class="sr-only">Ekran wyszukiwarki w aplikacji Smecz: tenis, korty, Warszawa w promieniu 10 km, jutro, po południu od 17:00 do 20:00, 120 minut.</figcaption>
+              <div class="phone__screen">
+                <div class="phone__status"><b>9:41</b><span>●●● ◔ ▮</span></div>
+                <div class="phone__scroll" data-phone-scroll>
+                  <div class="app-head"><span aria-hidden="true">←</span><b>Wyszukiwarka</b><span></span></div>
+                  <div class="app-tabs">
+                    <span class="app-tab is-active"><i class="dot dot--tenis"></i>Tenis</span>
+                    <span class="app-tab"><i class="dot dot--padel"></i>Padel</span>
+                    <span class="app-tab"><i class="dot dot--squash"></i>Squash</span>
+                    <span class="app-tab"><i class="dot dot--pickle"></i>Pickle</span>
+                  </div>
+                  <div class="app-body">
+                    <div class="chips">
+                      <span class="chip chip--dark" data-step="0">✓ Korty</span><span class="chip">Obozy</span><span class="chip">Zajęcia</span><span class="chip">Trenerzy</span>
+                    </div>
+                    <div class="app-card">
+                      <b>Miejsce</b>
+                      <span class="field" data-step="1">⌖ Warszawa</span>
+                      <div class="range"><span class="range__fill" data-range></span><span class="range__knob" data-range-knob></span></div>
+                      <div class="range__lbl"><span>0 km</span><span>5 km</span><span>10 km</span><span>15 km</span></div>
+                    </div>
+                    <div class="app-card">
+                      <b>Termin</b>
+                      <div class="chips"><span class="chip">Dziś</span><span class="chip" data-step="2">Jutro</span><span class="chip">Pojutrze</span></div>
+                    </div>
+                    <div class="app-card">
+                      <b>Godziny</b>
+                      <div class="chips"><span class="chip">Cały dzień</span><span class="chip">Rano</span><span class="chip" data-step="3">Po południu</span></div>
+                      <div class="times"><span>17 : 00</span><span>20 : 00</span></div>
+                    </div>
+                    <div class="app-card">
+                      <b>Czas trwania</b>
+                      <div class="chips chips--tight"><span class="chip">60</span><span class="chip">90</span><span class="chip" data-step="4">120 min</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </figure>
+
+            <div class="result-card glass glass--light" data-result>
+              <span class="broadcast__label">Wolne · jutro</span>
+              <b class="result-card__time">18:30</b>
+              <span class="result-card__where">Klub Tenisowy Warszawianka · Kort 3</span>
+              <span class="btn btn--volt btn--xs" aria-hidden="true">Rezerwuj ↗</span>
+            </div>
+            <div class="alert-card" data-alert>
+              <span class="alert-card__icon" aria-hidden="true">🔔</span>
+              <span><b>Zwolniło się 19:00</b><br>w Twoim ulubionym klubie</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 5. Rywal -->
+    <section class="rival container" aria-labelledby="rival-title">
+      <div class="rival__text" data-reveal-group>
+        <p data-reveal class="eyebrow">Gracze</p>
+        <h2 id="rival-title" data-reveal class="h2">Rywal na Twoim poziomie.</h2>
+        <p data-reveal class="lead">Ustawiasz poziom osobno dla każdej dyscypliny. Smecz pokazuje graczy, którzy grają podobnie: możesz dołączyć do ich meczu, obserwować ich wyniki albo wyzwać kogoś w swojej lidze.</p>
+      </div>
+      <div class="rival__stage">
+        <div class="rival__photo" data-rival-photo>
+          <img src="assets/img/uscisk.jpg" width="1600" height="1067" alt="Dwoje graczy padla podaje sobie ręce na niebieskim korcie po meczu" loading="lazy">
+        </div>
+        <div class="versus glass glass--light" aria-label="Przykładowa karta meczu: Ty kontra Michał Wiśniewski, liga, środa 28 sierpnia, 18:30">
+          <div class="versus__half versus__half--you" data-vs-left>
+            <span class="avatar avatar--lg avatar--you">TY</span>
+            <span class="versus__name">Ty</span>
+            <span class="versus__meta">poziom 3.5</span>
+          </div>
+          <div class="versus__net" data-vs-net><span>VS</span></div>
+          <div class="versus__half" data-vs-right>
+            <span class="avatar avatar--lg">MW</span>
+            <span class="versus__name">Michał Wiśniewski</span>
+            <span class="versus__meta">poziom 3.5</span>
+          </div>
+          <div class="versus__foot"><span class="versus__when"><span class="tag tag--sm tag--padel">Padel</span> Liga · Środa 28.08 · 18:30</span><span class="btn btn--volt btn--xs" aria-hidden="true">Wyzwij na mecz ↗</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Wynik zostaje -->
+    <div class="score-track">
+      <section class="score" aria-labelledby="score-title">
+        <div class="score__inner container">
+          <div class="score__frame" data-score-frame>
+            <img src="assets/img/serwis.jpg" width="1400" height="2100" alt="Tenisista serwuje, widziany z góry, z długim cieniem na korcie" loading="lazy" data-score-photo>
+            <div class="scoreboard" aria-label="Przykładowy wynik meczu: Ty 6:4, 6:3">
+              <p class="scoreboard__head">Liga · Kort 3 · Śr 28.08</p>
+              <div class="scoreboard__row scoreboard__row--you"><span class="scoreboard__who"><i class="serve" aria-hidden="true"></i>Ty</span><b data-set="0">0</b><b data-set="1">0</b></div>
+              <div class="scoreboard__row"><span class="scoreboard__who">M. Wiśniewski</span><b data-set="2">0</b><b data-set="3">0</b></div>
+            </div>
+            <div class="rank-chip glass glass--light" data-rank>
+              <span class="broadcast__label">Ranking ligi</span>
+              <b class="rank-chip__num"><span data-rank-num>5</span><i class="rank-chip__up" data-rank-up aria-hidden="true">▲</i></b>
+            </div>
+          </div>
+          <div class="score__text" data-reveal-group>
+            <p data-reveal class="eyebrow">Po meczu</p>
+            <h2 id="score-title" data-reveal class="h2">Wynik zostaje.</h2>
+            <p data-reveal class="lead">Każdy mecz zostaje w aplikacji: wynik, rywal, kort, data. Z meczów powstają Twoje statystyki i miejsce w rankingu. Po sezonie widzisz czarno na białym, jak rośniesz.</p>
+            <dl class="facts" data-reveal-group>
+              <div data-reveal><dt>Historia</dt><dd>Mecze i treningi w jednym miejscu</dd></div>
+              <div data-reveal><dt>Ranking</dt><dd>Obecny i najlepszy w historii</dd></div>
+              <div data-reveal><dt>Odznaki</dt><dd>Zbierane na Twoim profilu gracza</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 7. Sezon -->
+    <section class="season" id="sezon" aria-labelledby="season-title">
+      <div class="container season__head" data-reveal-group>
+        <p data-reveal class="eyebrow">Ligi i turnieje</p>
+        <h2 id="season-title" data-reveal class="h2">Twój sezon.</h2>
+        <p data-reveal class="lead">Dołączasz do ligi, widzisz swoją pozycję, nadchodzące mecze i drabinkę turnieju, a także jak grają inni. Wszystko na telefonie, w trakcie przerwy między gemami.</p>
+      </div>
+      <div class="season__stage container">
+        <div class="season__photo" data-season-photo>
+          <img src="assets/img/turniej.jpg" width="2000" height="1333" alt="Turniej pickleballa na kilku niebieskich kortach w hali" loading="lazy">
+          <svg class="bracket" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
+            <path data-bracket d="M20 30 H120 V75 H220 M20 120 H120 V75 M20 180 H120 V225 H220 M20 270 H120 V225 M220 75 H320 V150 H440 M220 225 H320 V150"/>
+            <circle cx="452" cy="150" r="9" data-bracket-dot/>
+          </svg>
+        </div>
+        <ul class="t-cards" data-tcards data-reveal-group>
+          <li data-reveal class="t-card glass glass--light"><span class="t-card__date">28–30<br><small>października</small></span><span class="t-card__body"><span class="tag tag--sm tag--tenis">Tenis</span><b>Legia Med Open</b><small>Legia Warszawa · open do 85+</small></span></li>
+          <li data-reveal class="t-card glass glass--light"><span class="t-card__date">14–16<br><small>listopada</small></span><span class="t-card__body"><span class="tag tag--sm tag--squash">Squash</span><b>Liga czwartkowa</b><small>Runda 3 · poziom średni</small></span></li>
+          <li data-reveal class="t-card glass glass--light"><span class="t-card__date">29–30<br><small>listopada</small></span><span class="t-card__body"><span class="tag tag--sm tag--padel">Padel</span><b>Turniej deblowy</b><small>Drabinka 16 par</small></span></li>
+        </ul>
+        <p class="sample-note">Karty turniejów: przykładowe dane z makiety aplikacji.</p>
+      </div>
+    </section>
+
+    <!-- 8. Finał: Pro. -->
+    <div class="final-track">
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title" class="final__word" aria-label="Pro.">
+          <span aria-hidden="true">Pro</span><span class="final__punct" aria-hidden="true"><span class="final__q" data-final-q>?</span><span class="final__ball" data-final-ball></span></span>
+        </h2>
+        <figure class="pcard" data-pcard>
+          <div class="pcard__head" data-piece>
+            <span class="avatar avatar--lg avatar--you">TY</span>
+            <span><b>Twoja karta zawodnika</b><small class="pcard__tags"><span class="tag tag--sm tag--tenis">Tenis</span><span class="tag tag--sm tag--padel">Padel</span></small></span>
+          </div>
+          <div class="pcard__stats">
+            <div class="pcard__stat" data-piece><span class="broadcast__label">Ranking</span><b>4</b></div>
+            <div class="pcard__stat" data-piece><span class="broadcast__label">Mecze · 2026</span><b>17</b></div>
+            <div class="pcard__stat pcard__stat--wide" data-piece><span class="broadcast__label">Wygrane · 68%</span><b><span class="win">16</span> <i>/</i> 8</b></div>
+          </div>
+          <div class="pcard__badges" data-piece>
+            <span class="pill">🔥 Seria 5 meczów</span><span class="pill">🏆 Liga · runda 2</span>
+          </div>
+          <figcaption class="pcard__cap">Przykładowe dane</figcaption>
+        </figure>
+        <p class="final__line" data-final-line>Twoja karta. Twój sezon. Twój poziom.</p>
+      </section>
+    </div>
+
+    <!-- 9. Pobierz -->
+    <section class="get" id="pobierz" aria-labelledby="get-title">
+      <div class="container get__inner">
+        <div data-reveal-group>
+          <p data-reveal class="eyebrow">Pobierz Smecz</p>
+          <h2 data-reveal id="get-title" class="h2 h2--xl">Za darmo.<br>W całej Polsce.</h2>
+          <p data-reveal class="lead">Tenis, padel, squash i pickleball w jednej aplikacji: kort, rywal, wynik i ranking.</p>
+          <p data-reveal class="get__tags"><span class="tag tag--tenis">Tenis</span><span class="tag tag--padel">Padel</span><span class="tag tag--squash">Squash</span><span class="tag tag--pickle">Pickleball</span></p>
+          <div data-reveal class="stores">
+            <button class="store" type="button" data-store="App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.6ZM14.2 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3Z"/></svg>
+              <span><small>Pobierz z</small>App Store</span>
+            </button>
+            <button class="store" type="button" data-store="Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.8v18.4c0 .3.2.6.4.7l10.3-10L4.4 2.1c-.2.1-.4.4-.4.7Zm12.2 7.6L6.3 1.6l11.9 6.8-2 2Zm0 3.2 2 2L6.3 22.4l9.9-8.8Zm4.4-2.8-2.4-1.4-2.3 2.6 2.3 2.6 2.4-1.4c.7-.4.7-1.4 0-2.4Z"/></svg>
+              <span><small>Pobierz z</small>Google Play</span>
+            </button>
+          </div>
+          <p class="store-msg" role="status" aria-live="polite" data-store-msg></p>
+        </div>
+        <div class="get__photo" data-reveal-group><div data-reveal class="get__photo-in">
+          <img src="assets/img/pilka.jpg" width="1200" height="1800" alt="Piłka tenisowa na zielonym korcie z długim cieniem" loading="lazy">
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="wordmark wordmark--sm">Smecz<span class="wordmark__dot">.</span></span>
+      <p>Dane na ekranach (rankingi, wyniki, nazwiska, turnieje) są przykładowe. Zdjęcia: Unsplash — Vincenzo Morelli, @ajalao, @createwitherjola, @arnok, @aheald25, @hprobotic, @lalasse.</p>
+      <p>© 2026 Smecz</p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/motion.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
